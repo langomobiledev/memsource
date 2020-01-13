@@ -1,0 +1,155 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://cloud.memsource.com/web/api2/v1/auth/login
+    body:
+      encoding: UTF-8
+      string: '{"userName":"<TEST_EMAIL>","password":"<TEST_PASSWORD>"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.6.3p62
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '59'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Memsource-Action-Id:
+      - 28833fcf5743496288356dfd39283519
+      X-Frame-Options:
+      - DENY
+      Cache-Control:
+      - no-store, private, max-age=0
+      Expires:
+      - Fri, 10 Jan 2020 20:01:17 GMT
+      Last-Modified:
+      - Fri, 10 Jan 2020 21:01:17 GMT
+      Date:
+      - Fri, 10 Jan 2020 21:01:17 GMT
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - ''
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"user":{"userName":"<TEST_EMAIL>","uid":"2vOxNbojM4ph5h9cQacr16","id":"439114","firstName":"J","lastName":"K","role":"ADMIN","email":"<TEST_EMAIL>"},"token":"KyNoLE9VxloMBui5TmY6yWVKCyo0duGnOB4UpDPRkmGOiM6vLRdW2BKCwPgKWz6x1","expires":"2020-01-10T22:33:30+0000"}'
+    http_version: 
+  recorded_at: Fri, 10 Jan 2020 21:01:18 GMT
+- request:
+    method: get
+    uri: https://cloud.memsource.com/web/api2/v1/projects?token=KyNoLE9VxloMBui5TmY6yWVKCyo0duGnOB4UpDPRkmGOiM6vLRdW2BKCwPgKWz6x1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.6.3p62
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Memsource-Action-Id:
+      - a862b295c2a14477b43e0cfdad4f5a9a
+      X-Frame-Options:
+      - DENY
+      Cache-Control:
+      - no-store, private, max-age=0
+      Expires:
+      - Fri, 10 Jan 2020 20:01:19 GMT
+      Last-Modified:
+      - Fri, 10 Jan 2020 21:01:19 GMT
+      Date:
+      - Fri, 10 Jan 2020 21:01:19 GMT
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - ''
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"pageNumber":0,"content":[{"internalId":5,"progress":{"overdueCount":0,"totalCount":0,"finishedCount":0},"dateCreated":"2020-01-10T20:58:57+0000","references":[],"id":"15812414","analyseSettings":{"id":"149840174"},"targetLangs":["es"],"financialSettings":{"id":"17114192"},"subDomain":null,"sourceLang":"en","businessUnit":null,"purchaseOrder":null,"dateDue":null,"name":"Test
+        Project","owner":{"userName":"<TEST_EMAIL>","uid":"2vOxNbojM4ph5h9cQacr16","id":"439114","firstName":"J","lastName":"K","role":"ADMIN","email":"<TEST_EMAIL>"},"uid":"efXC08onhfTcpiFJYzE1qa","createdBy":{"userName":"<TEST_EMAIL>","uid":"2vOxNbojM4ph5h9cQacr16","id":"439114","firstName":"J","lastName":"K","role":"ADMIN","email":"<TEST_EMAIL>"},"client":null,"status":"NEW","note":null,"qualityAssuranceSettings":{"id":"17185625"},"costCenter":null,"domain":null,"isPublishedOnJobBoard":false,"shared":false,"userRole":"ADMIN","accessSettings":{"id":"16972823"},"workflowSteps":[],"mtSettingsPerLanguageList":null}],"numberOfElements":1,"totalElements":1,"pageSize":50,"totalPages":1}'
+    http_version: 
+  recorded_at: Fri, 10 Jan 2020 21:01:20 GMT
+- request:
+    method: post
+    uri: https://cloud.memsource.com/web/api2/v1/projects/15812414/jobs?token=KyNoLE9VxloMBui5TmY6yWVKCyo0duGnOB4UpDPRkmGOiM6vLRdW2BKCwPgKWz6x1
+    body:
+      encoding: UTF-8
+      string: 'a file to upload
+
+'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.6.3p62
+      Content-Type:
+      - application/octet-stream
+      Memsource:
+      - '{"targetLangs":["es"]}'
+      Content-Disposition:
+      - filename*=UTF-8''upload.txt
+      Content-Length:
+      - '17'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: ''
+    headers:
+      Memsource-Action-Id:
+      - 9ee83c929e024d69b93daf7252f0a1d2
+      X-Frame-Options:
+      - DENY
+      Cache-Control:
+      - no-store, private, max-age=0
+      Expires:
+      - Fri, 10 Jan 2020 20:01:21 GMT
+      Last-Modified:
+      - Fri, 10 Jan 2020 21:01:21 GMT
+      Date:
+      - Fri, 10 Jan 2020 21:01:21 GMT
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - ''
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"asyncRequest":{"action":"IMPORT_JOB","dateCreated":"2020-01-10T21:01:21+0000","id":"342820603"},"jobs":[{"jobAssignedEmailTemplate":null,"workflowLevel":1,"workflowStep":null,"uid":"qI7W8Vmcp1kpgOzCYnEA05","filename":"upload.txt","status":"NEW","imported":false,"dateCreated":"2020-01-10T21:01:21+0000","notificationIntervalInMinutes":-1,"providers":[],"dateDue":null,"continuous":false,"targetLang":"es"}],"unsupportedFiles":[]}'
+    http_version: 
+  recorded_at: Fri, 10 Jan 2020 21:01:21 GMT
+recorded_with: VCR 5.0.0

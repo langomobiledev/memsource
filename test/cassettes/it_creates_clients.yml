@@ -1,0 +1,104 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://cloud.memsource.com/web/api2/v1/auth/login
+    body:
+      encoding: UTF-8
+      string: '{"userName":"<TEST_EMAIL>","password":"<TEST_PASSWORD>"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.6.3p62
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '59'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Memsource-Action-Id:
+      - 310bbc22574148359881b57fe18858a5
+      X-Frame-Options:
+      - DENY
+      Cache-Control:
+      - no-store, private, max-age=0
+      Expires:
+      - Mon, 13 Jan 2020 15:36:12 GMT
+      Last-Modified:
+      - Mon, 13 Jan 2020 16:36:12 GMT
+      Date:
+      - Mon, 13 Jan 2020 16:36:12 GMT
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - ''
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"user":{"userName":"<TEST_EMAIL>","uid":"2vOxNbojM4ph5h9cQacr16","id":"439114","firstName":"J","lastName":"K","role":"ADMIN","email":"<TEST_EMAIL>"},"token":"HFDaQkBphhE0tKEM7Kn6P2SGC0jY15yTo9nDfmnZCcurfeb7acHajMt52xkqOr9l6","expires":"2020-01-14T16:36:14+0000"}'
+    http_version: 
+  recorded_at: Mon, 13 Jan 2020 16:36:14 GMT
+- request:
+    method: post
+    uri: https://cloud.memsource.com/web/api2/v1/clients?token=HFDaQkBphhE0tKEM7Kn6P2SGC0jY15yTo9nDfmnZCcurfeb7acHajMt52xkqOr9l6
+    body:
+      encoding: UTF-8
+      string: '{"name":"Client Name","externalId":"GUID GOES HERE","note":"Notes go
+        here"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.6.3p62
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '75'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: ''
+    headers:
+      Memsource-Action-Id:
+      - e1b75a1175df4ddabe9d3d28e6d05e14
+      X-Frame-Options:
+      - DENY
+      Cache-Control:
+      - no-store, private, max-age=0
+      Expires:
+      - Mon, 13 Jan 2020 15:36:14 GMT
+      Last-Modified:
+      - Mon, 13 Jan 2020 16:36:14 GMT
+      Date:
+      - Mon, 13 Jan 2020 16:36:14 GMT
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - ''
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"netRateScheme":null,"createdBy":{"userName":"<TEST_EMAIL>","uid":"2vOxNbojM4ph5h9cQacr16","id":"439114","firstName":"J","lastName":"K","role":"ADMIN","email":"<TEST_EMAIL>"},"displayNoteInProject":false,"note":"Notes
+        go here","id":"169790","priceList":null,"externalId":"GUID GOES HERE","name":"Client
+        Name"}'
+    http_version: 
+  recorded_at: Mon, 13 Jan 2020 16:36:15 GMT
+recorded_with: VCR 5.0.0

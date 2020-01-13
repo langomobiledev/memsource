@@ -1,0 +1,152 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://cloud.memsource.com/web/api2/v1/auth/login
+    body:
+      encoding: UTF-8
+      string: '{"userName":"<TEST_EMAIL>","password":"<TEST_PASSWORD>"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.6.3p62
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '59'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Memsource-Action-Id:
+      - 3a4fc8098da6418ab21bb79cad7122a8
+      X-Frame-Options:
+      - DENY
+      Cache-Control:
+      - no-store, private, max-age=0
+      Expires:
+      - Mon, 13 Jan 2020 15:40:30 GMT
+      Last-Modified:
+      - Mon, 13 Jan 2020 16:40:30 GMT
+      Date:
+      - Mon, 13 Jan 2020 16:40:30 GMT
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - ''
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"user":{"userName":"<TEST_EMAIL>","uid":"2vOxNbojM4ph5h9cQacr16","id":"439114","firstName":"J","lastName":"K","role":"ADMIN","email":"<TEST_EMAIL>"},"token":"HFDaQkBphhE0tKEM7Kn6P2SGC0jY15yTo9nDfmnZCcurfeb7acHajMt52xkqOr9l6","expires":"2020-01-14T16:36:14+0000"}'
+    http_version: 
+  recorded_at: Mon, 13 Jan 2020 16:40:31 GMT
+- request:
+    method: get
+    uri: https://cloud.memsource.com/web/api2/v1/clients?token=HFDaQkBphhE0tKEM7Kn6P2SGC0jY15yTo9nDfmnZCcurfeb7acHajMt52xkqOr9l6
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.6.3p62
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Memsource-Action-Id:
+      - bb5838ca2ee74f9ea8da9315053c9af8
+      X-Frame-Options:
+      - DENY
+      Cache-Control:
+      - no-store, private, max-age=0
+      Expires:
+      - Mon, 13 Jan 2020 15:40:32 GMT
+      Last-Modified:
+      - Mon, 13 Jan 2020 16:40:32 GMT
+      Date:
+      - Mon, 13 Jan 2020 16:40:32 GMT
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - ''
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"pageNumber":0,"content":[{"netRateScheme":null,"createdBy":{"userName":"<TEST_EMAIL>","uid":"2vOxNbojM4ph5h9cQacr16","id":"439114","firstName":"J","lastName":"K","role":"ADMIN","email":"<TEST_EMAIL>"},"displayNoteInProject":false,"note":"Notes
+        go here","id":"169790","priceList":null,"externalId":"GUID GOES HERE","name":"Client
+        Name"}],"numberOfElements":1,"totalElements":1,"pageSize":50,"totalPages":1}'
+    http_version: 
+  recorded_at: Mon, 13 Jan 2020 16:40:32 GMT
+- request:
+    method: post
+    uri: https://cloud.memsource.com/web/api2/v1/projects?token=HFDaQkBphhE0tKEM7Kn6P2SGC0jY15yTo9nDfmnZCcurfeb7acHajMt52xkqOr9l6
+    body:
+      encoding: UTF-8
+      string: '{"name":"Test Project","client":{"id":"169790"},"sourceLang":"en","targetLangs":["es"]}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.6.3p62
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '87'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: ''
+    headers:
+      Memsource-Action-Id:
+      - d07a3c432971413ba56176f6dd7bb379
+      X-Frame-Options:
+      - DENY
+      Cache-Control:
+      - no-store, private, max-age=0
+      Expires:
+      - Mon, 13 Jan 2020 15:40:33 GMT
+      Last-Modified:
+      - Mon, 13 Jan 2020 16:40:33 GMT
+      Date:
+      - Mon, 13 Jan 2020 16:40:33 GMT
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - ''
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"internalId":6,"progress":{"overdueCount":0,"totalCount":0,"finishedCount":0},"dateCreated":"2020-01-13T16:40:33+0000","references":[],"id":"15826650","analyseSettings":{"id":"149881278"},"targetLangs":["es"],"financialSettings":{"id":"17131996"},"subDomain":null,"sourceLang":"en","businessUnit":null,"purchaseOrder":null,"dateDue":null,"name":"Test
+        Project","owner":{"userName":"<TEST_EMAIL>","uid":"2vOxNbojM4ph5h9cQacr16","id":"439114","firstName":"J","lastName":"K","role":"ADMIN","email":"<TEST_EMAIL>"},"uid":"yM15p802Lpzq19oCrDcwj3","createdBy":{"userName":"<TEST_EMAIL>","uid":"2vOxNbojM4ph5h9cQacr16","id":"439114","firstName":"J","lastName":"K","role":"ADMIN","email":"<TEST_EMAIL>"},"client":{"id":"169790","name":"Client
+        Name"},"status":"NEW","note":null,"qualityAssuranceSettings":{"id":"17207070"},"costCenter":null,"domain":null,"isPublishedOnJobBoard":false,"shared":false,"userRole":"ADMIN","accessSettings":{"id":"16990025"},"workflowSteps":[],"mtSettingsPerLanguageList":null}'
+    http_version: 
+  recorded_at: Mon, 13 Jan 2020 16:40:33 GMT
+recorded_with: VCR 5.0.0
