@@ -40,5 +40,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'minitest', '~> 5.0'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'vcr', '~> 5.0.0'
+  spec.add_development_dependency 'webmock', '~> 3.7.6'
   spec.add_dependency 'rest-client', '~> 2.1.0'
 end
