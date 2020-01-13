@@ -13,10 +13,10 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.6.x
+    - name: Build and test with Rake
       env: # Or as an environment variable
         TEST_EMAIL: ${{ secrets.TEST_EMAIL }}
         TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
-    - name: Build and test with Rake
       run: |
         gem install bundler
         bundle install --jobs 4 --retry 3
