@@ -30,7 +30,7 @@ module Memsource
       )
 
       JSON.parse(response.body, object_class: OpenStruct)
-    rescue RestClient::BadRequest => e
+    rescue RestClient::Exception => e
       raise Error, JSON.parse(e.response.body)['errorDescription']
     end
 
@@ -47,6 +47,8 @@ module Memsource
       )
 
       JSON.parse(response.body, object_class: OpenStruct)
+    rescue RestClient::Exception => e
+      raise Error, JSON.parse(e.response.body)['errorDescription']
     end
 
     def list
