@@ -80,8 +80,8 @@ module Memsource
     # * external_id: string
     # * note: string
     # See: https://cloud.memsource.com/web/docs/api#operation/createClient
-    def create(id, external_id, note, options = {})
-      options[:id] = id
+    def create(name, external_id, note, options = {})
+      options[:name] = name
       options[:externalId] = external_id
       options[:note] = note
       post(PATH, options)
