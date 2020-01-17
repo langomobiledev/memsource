@@ -52,11 +52,29 @@ module Memsource
     end
 
     def list
-      get(self.class::PATH)
+      @list ||= get(self.class::PATH)
     end
 
     def find(id)
-      get("#{self.class::PATH}/#{id}")
+      ids[id] ||= get("#{self.class::PATH}/#{id}")
+    end
+
+    def where(query = {})
+      list.content.select do |item|
+        query.all? do |k, v|
+          item.respond_to?(k) && item.send(k) == v
+        end
+      end
+    end
+
+    def find_by(query = {})
+      where(query).first
+    end
+
+    private
+
+    def ids
+      @ids ||= {}
     end
   end
 

@@ -1,0 +1,101 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://cloud.memsource.com/web/api2/v1/auth/login
+    body:
+      encoding: UTF-8
+      string: '{"userName":"<TEST_EMAIL>","password":"<TEST_PASSWORD>"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.6.3p62
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '59'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Memsource-Action-Id:
+      - b6efbbe317d7462180e8992816f5b8de
+      X-Frame-Options:
+      - DENY
+      Cache-Control:
+      - no-store, private, max-age=0
+      Expires:
+      - Fri, 17 Jan 2020 19:28:50 GMT
+      Last-Modified:
+      - Fri, 17 Jan 2020 20:28:50 GMT
+      Date:
+      - Fri, 17 Jan 2020 20:28:50 GMT
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - ''
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"user":{"userName":"<TEST_EMAIL>","uid":"2vOxNbojM4ph5h9cQacr16","id":"439114","firstName":"J","lastName":"K","role":"ADMIN","email":"<TEST_EMAIL>"},"token":"CEl18RGVzVVQFs4tvbuLuUGbN23aDIHfFKohtfea8sHNkHtvWXWc6sPDQAXkcV5I0","expires":"2020-01-18T17:33:44+0000"}'
+    http_version: 
+  recorded_at: Fri, 17 Jan 2020 20:28:51 GMT
+- request:
+    method: get
+    uri: https://cloud.memsource.com/web/api2/v1/projects?token=CEl18RGVzVVQFs4tvbuLuUGbN23aDIHfFKohtfea8sHNkHtvWXWc6sPDQAXkcV5I0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.6.3p62
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Memsource-Action-Id:
+      - 18610efcf91442c4b14ade1e96b7b484
+      X-Frame-Options:
+      - DENY
+      Cache-Control:
+      - no-store, private, max-age=0
+      Expires:
+      - Fri, 17 Jan 2020 19:28:52 GMT
+      Last-Modified:
+      - Fri, 17 Jan 2020 20:28:52 GMT
+      Date:
+      - Fri, 17 Jan 2020 20:28:52 GMT
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - ''
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"pageNumber":0,"content":[{"internalId":11,"progress":{"overdueCount":0,"totalCount":1,"finishedCount":0},"dateCreated":"2020-01-17T18:34:55+0000","references":[],"id":"15864420","analyseSettings":{"id":"150010090"},"targetLangs":["es"],"financialSettings":{"id":"17182164"},"subDomain":null,"sourceLang":"en","businessUnit":null,"purchaseOrder":null,"dateDue":null,"name":"Test
+        Project","owner":{"userName":"<TEST_EMAIL>","uid":"2vOxNbojM4ph5h9cQacr16","id":"439114","firstName":"J","lastName":"K","role":"ADMIN","email":"<TEST_EMAIL>"},"uid":"3cSkrKFDp8XtbZ4OjCKy93","createdBy":{"userName":"<TEST_EMAIL>","uid":"2vOxNbojM4ph5h9cQacr16","id":"439114","firstName":"J","lastName":"K","role":"ADMIN","email":"<TEST_EMAIL>"},"client":{"id":"170309","name":"Layers
+        of Lawyers"},"status":"NEW","note":null,"qualityAssuranceSettings":{"id":"17260769"},"costCenter":null,"domain":null,"isPublishedOnJobBoard":false,"shared":false,"userRole":"ADMIN","accessSettings":{"id":"17037385"},"workflowSteps":[],"mtSettingsPerLanguageList":null}],"numberOfElements":1,"totalElements":1,"pageSize":50,"totalPages":1}'
+    http_version: 
+  recorded_at: Fri, 17 Jan 2020 20:28:52 GMT
+recorded_with: VCR 5.0.0

@@ -98,14 +98,48 @@ class MemsourceTest < Minitest::Test
 
   def test_it_gets_a_project
     id = nil
-    response = VCR.use_cassette('it_gets_a_project') do
+    session = VCR.use_cassette('it_gets_a_project') do
       session = Memsource::Session.new(email, password)
 
       id = session.projects.list.content.first.id
 
       session.projects.find(id)
+      session
     end
 
+    # check that it doesn't hit the url again
+    response = session.projects.find(id)
+
     assert_equal id, response.id
+  end
+
+  def test_it_queries_projects
+    response = VCR.use_cassette('it_queries_projects') do
+      session = Memsource::Session.new(email, password)
+
+      session.projects.where(name: project_name, sourceLang: 'en')
+    end
+
+    assert_equal project_name, response.first.name
+  end
+
+  def test_it_queries_projects_without_results
+    response = VCR.use_cassette('it_queries_projects') do
+      session = Memsource::Session.new(email, password)
+
+      session.projects.where(name: project_name, sourceLang: 'es')
+    end
+
+    assert response.empty?
+  end
+
+  def test_it_find_by_projects
+    response = VCR.use_cassette('it_queries_projects') do
+      session = Memsource::Session.new(email, password)
+
+      session.projects.find_by(name: project_name)
+    end
+
+    assert_equal project_name, response.name
   end
 end
